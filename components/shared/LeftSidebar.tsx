@@ -16,10 +16,10 @@ function LeftSidebar() {
 custom-scrollbar leftsidebar">
             <div className="flex w-full flex-1 flex-col gap-6 px6">
                 {sidebarLinks.map((link) => {
+                    if(link.route === '/profile') link.route = `${link.route}/${userId}`
+                    
                    const isActive = (pathname.includes(link.route) && link.route.length >
                    1) || pathname === link.route;
-
-                   if(link.route === '/profile') link.route = `${link.route}/${userId}`
                 
                 return (
                     <Link 
